@@ -1,4 +1,8 @@
 export default function Home() {
+  const getDifficulties = () => {
+    return "Hard";
+  };
+
   return (
     <div className="flex flex-col min-h-screen ">
       <nav className="navbar flex flex-row h-16 justify-center gap-5 bg-[#454D5C] sticky">
@@ -20,13 +24,15 @@ export default function Home() {
             </div>
             <button>Change</button>
           </div>
-          <div className="summary p-10 bg-[#C1B49C] bg-opacity-70">
-            <ul className="list-disc">
-              <li>Difficulties</li>
-              <li>Total selectable characters: 21</li>
+          <div className="flex flex-col justify-start items-start content-between gap-5 summary p-10 bg-[#C1B49C] bg-opacity-70">
+            <ul className="list-disc ">
+              <li>Difficulties: {getDifficulties()}</li>
               <li>
-                You need 1 more &quot;Alternate cast&quot; character at level 70
-                to unlock the next difficulty
+                Total selectable characters: 21
+                <p className="pl-5">
+                  You need 1 more &quot;Alternate cast&quot; character at level
+                  70 to unlock the next difficulty
+                </p>
               </li>
             </ul>
             <button>Update Roster</button>
@@ -34,7 +40,7 @@ export default function Home() {
           <div className="selected-character-container h-44"></div>
         </div>
       </main>
-      <footer className="flex flex-row justify-center items-center h-16 gap-5 bg-[#454D5C] absolute bottom-0 ">
+      <footer className="flex flex-row w-full justify-center items-center h-16 gap-5 bg-[#454D5C] absolute bottom-0 ">
         <div>Made by Haruchon</div>
       </footer>
     </div>
